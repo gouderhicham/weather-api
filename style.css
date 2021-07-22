@@ -1,0 +1,243 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url(https://source.unsplash.com/1600x900/?landscape);
+  font-size: 120%;
+}
+body::after {
+  position: absolute;
+  content: "";
+  background: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 200vw;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.search {
+  margin-bottom: 50px;
+}
+.card {
+  background: #000000d0;
+  color: #fff;
+  border-radius: 30px;
+  max-width: 60%;
+  padding: 2em;
+  position: relative;
+  width: 420px;
+}
+button {
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  background: rgb(25, 25, 25);
+  color: #fff;
+  cursor: pointer;
+  top: 30px;
+  right: 30px;
+  transition: 0.2s ease-in-out;
+}
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+input.search-bar {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+  padding: 0.4em 1em;
+  background: rgb(25, 25, 25);
+  color: #fff;
+  font-family: inherit;
+  font-size: 105%;
+  width: 100%;
+}
+button:hover {
+  background: #7c7c7c6b;
+}
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+/*auto complete*/
+
+.autocomplete-items.toggle {
+  height: 230px;
+  overflow-y: scroll;
+  width: 116%;
+}
+.autocomplete-items div:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.autocomplete-items div:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.autocomplete-items div:first-child.take {
+  border-top-right-radius: 0px;
+}
+.autocomplete-items div:last-child.tak {
+  border-bottom-right-radius: 0px;
+}
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  top: 63px;
+  overflow-x: hidden;
+  width: 100%;
+  left: 30px;
+  width: 113%;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  background: rgb(25, 25, 25);
+  color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
+  width: 900px;
+}
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+  color: black;
+  border-bottom: 2px solid black;
+}
+.autocomplete-active {
+  background-color: #e9e9e9 !important;
+  color: black !important;
+  border-bottom: 2px solid black;
+}
+/* scroll bar*/
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(25, 25, 25);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e9e9e9;
+  transition: 0.3s ease all;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b6b6b6;
+}
+@media screen and (max-width: 631px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  input.search-bar {
+    width: 90%;
+  }  
+  .autocomplete-items div {
+    width: 82%;
+  }
+  .autocomplete-items div:first-child.take {
+    border-top-right-radius: 10px;
+  }
+  .autocomplete-items div:last-child.tak {
+    border-bottom-right-radius: 10px;
+  }
+}
+
+@media screen and (max-width:569px) {
+  input.search-bar {
+    width: 80%;
+  }
+  .autocomplete-items div {
+    width: 72%;
+  }
+  
+}
+@media screen and (max-width:519px) {
+  input.search-bar {
+    width: 75%;
+  }
+  .autocomplete-items div {
+    width: 67%;
+  }
+}
+@media screen and (max-width:495px) {
+  input.search-bar {
+    width: 70%;
+  }
+  .autocomplete-items div {
+    width: 62%;
+  }
+}
+@media screen and (max-width:469px) {
+  input.search-bar {
+    width: 65%;
+  }
+  .autocomplete-items div {
+    width: 62%;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  input.search-bar {
+    width: 60%;
+  }
+  .autocomplete-items div {
+    width: 56%;
+  }
+}
+@media screen and (max-width: 414px) {
+  input.search-bar {
+    width: 50%;
+  }
+  .autocomplete-items div {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 360px) {
+  input.search-bar {
+    width: 40%;
+  }
+  .autocomplete-items div {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 318px) {
+  input.search-bar {
+    width: 30%;
+  }
+  .autocomplete-items div {
+    width: 30%;
+  }
+}
